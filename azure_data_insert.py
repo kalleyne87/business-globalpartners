@@ -1,11 +1,15 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 import urllib.parse
+from dotenv import load_dotenv
+import os
 
-SERVER = "globalpartnersprojectka.database.windows.net"
-DATABASE = "business-global"
-USERNAME = "admin87"
-PASSWORD = "67806Ker"
+load_dotenv()
+
+SERVER = os.getenv("SERVER")
+DATABASE = os.getenv("DATABASE")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 
 def get_engine():
     params = urllib.parse.quote_plus(
